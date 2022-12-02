@@ -34,4 +34,9 @@ public class OrderServiceImpl implements OrderService{
         // 회원정보, 아이템정보, 정상가격, 할인가격을 Order인스턴스에 담아 리턴함
         return new Order(memberId, itemName, itemPrice, discountPrice);
     }
+
+    // 테스트 용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
 }
