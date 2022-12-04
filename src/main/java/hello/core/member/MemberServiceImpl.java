@@ -1,5 +1,9 @@
 package hello.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService{
 
     // 의존관계 역전 원칙
@@ -10,7 +14,11 @@ public class MemberServiceImpl implements MemberService{
     // AppConfig사용으로 생성자 생성
 //   private final MemberRepository memberRepository = new MemoryMemberRepository();
 
+
     private final MemberRepository memberRepository;
+
+    // 만약 생성자가 해당 클래스에서 1개면 Autowired 생략 가능
+    @Autowired // 자동 의존관계 주입 ac.getBean(MemberRepository.class)처럼
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
