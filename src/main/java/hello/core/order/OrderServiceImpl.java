@@ -10,10 +10,19 @@ import org.springframework.stereotype.Component;
 public class OrderServiceImpl implements OrderService{
 
     //AppConfig 사용으로 생성자 생성
-    private  final MemberRepository memberRepository;
-    private  final DiscountPolicy discountPolicy;
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
 
-    @Autowired // 의존관계 주입
+//     수정자로 의존관게 주입 test
+//    @Autowired
+//    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+//        this.discountPolicy = discountPolicy;
+//    }
+//    @Autowired
+//    public void setMemberRepository(MemberRepository memberRepository) {
+//        this.memberRepository = memberRepository;
+//    }
+        @Autowired // 의존관계 주입
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
